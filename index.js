@@ -12,7 +12,7 @@ const app = express();
 app.use(bodyParser.json());
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://studies-frontend.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -188,4 +188,5 @@ app.put('/update/:id',verifyToken, async (req,res)=>{
 
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT} `);
+
 });
