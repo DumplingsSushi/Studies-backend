@@ -38,7 +38,11 @@ const verifyToken = (req, res, next) => {
   }
 };
 
-app.get('/',verifyToken,async  (req,res)=>{
+app.get('/',(req,res)=>{
+    res.send("API is running...");
+});
+
+app.get('/tasks',verifyToken,async  (req,res)=>{
     try{
         const userId = req.user.id;
         const data = await Task.find({userId:userId});
